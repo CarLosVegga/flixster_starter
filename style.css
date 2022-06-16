@@ -26,8 +26,29 @@ h1 {
     margin-top: 10px;
 }
 
-label {
+.header form {
+    display: flex;
+    justify-content: center;
+}
+
+#search-input {
+    height: 30px;
+    width: 250px;
+    border-radius: 5px;
+    border: none;
+    margin-left: 25px;
+    padding-left: 10px;
+}
+
+#search {
     color: white;
+    margin-left: 10px;
+    height: 33px;
+    width: 80px;
+    background-color: grey;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
 }
 
 /* MOVIES */
@@ -44,7 +65,7 @@ label {
     font-weight: bold;
     font-size: 150%;
     display: block;
-    /* border: 1px solid black; */
+    border: 1px solid black;
 }
 
 .movie-votes {
@@ -53,7 +74,7 @@ label {
     font-weight: normal;
     font-size: 120%;
     display: block;
-    /* border: 1px solid black; */
+    border: 1px solid black;
     align-items: start !important;
 }
 
@@ -76,9 +97,12 @@ label {
     justify-content: center;
 }
 #load-more-movies-btn {
-    width: 120px;
-    height: 30px;
-    background-color: #EEE5E9;
-    color: black;
+    color: white;
+    margin-left: 10px;
+    height: 40px;
+    width: 150px;
+    background-color: grey;
+    border-radius: 5px;
     border: none;
+    font-weight: bold;
 }

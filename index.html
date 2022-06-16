@@ -11,11 +11,12 @@
     
     <div class="header">
         <h1>Flixtster</h1>
-        
-        <input id='search-input' type="text" placeholder="Search movies">
+        <form action="">
+            <input id='search-input' type="text" placeholder="Find movies" required>
+            <button id="search" type="submit">Search</button>
+        </form>
+        <button id="close-search-btn">x</button>
 
-        <label for="close-search-btn">Search results</label>
-        <img id="close-search-btn" src="" alt="close search button">
     </div>
 
    <div id="movies-grid">
