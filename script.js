@@ -1,3 +1,5 @@
+let movieRegistry = [];
+
 const api_key = 'a3016ba6049f537e33cb6a0c27a8a821';
 const url_path = 'https://api.themoviedb.org/3/movie';
 const img_path = 'https://image.tmdb.org/t/p/w500/'
@@ -11,6 +13,8 @@ const searchFormElement = document.getElementById('search-form');
 const searchInputElement = document.getElementById('search-input');
 const closeSearchButtonElement = document.getElementById('close-search-btn');
 
+// Initialize page
+
 async function getData() {
     let response = await fetch(url_path + '/now_playing?api_key=' + api_key + '&page=' + page.toString());
     let data = await response.json();
@@ -19,7 +23,9 @@ async function getData() {
 
 function initializeMoviesGrid(movies) {
     movieGridElement.innerHTML = '';
-    movies.forEach(movie => {addMovieCard(movie)})
+    movies.forEach(movie => movieRegistry.push(movie));
+    movies.forEach(movie => {addMovieCard(movie)});
+    console.log(movieRegistry)
 }
 
 function addMovieCard(movie){
@@ -35,27 +41,45 @@ function addMovieCard(movie){
         </span>
     </div>
     `;
-    console.log(movie.original_title)
 }
 
-function addMoviesGrid(movies) {
-    movies.forEach(movie => {addMovieCard(movie)})
-}
+// Load more movies
 
 async function getMoreData(){
+    console.log('adding more movies')
+    console.log('movie page:' + page.toString())
     page += 1
     let response = await fetch(url_path + '/now_playing?api_key=' + api_key + '&page=' + page.toString());
     let data = await response.json();
     addMoviesGrid (data['results']);
 }
 
-async function searchMovie(movieName) {
-    console.log('searching...')
-    page = 1
-    let response = await fetch(search_path + movieName + '&page=' + page.toString());
-    let data = await response.json();
-    initializeMoviesGrid (data['results']);
+function addMoviesGrid(movies) {
+    movies.forEach(movie => movieRegistry.push(movie));
+    movies.forEach(movie => {addMovieCard(movie)});
 }
+
+// Search movies
+
+async function searchMovie(movieName) {
+    let response = await fetch(search_path + movieName);
+    let data = await response.json();
+    initializeSearchMoviesGrid (data['results']);
+}
+
+function initializeSearchMoviesGrid(movies) {
+    movieGridElement.innerHTML = '';
+    movies.forEach(movie => {addMovieCard(movie)});
+}
+
+// Retrieve movies
+
+function retrieveMovieRegistry() {
+    movieGridElement.innerHTML = '';
+    movieRegistry.forEach(movie => {addMovieCard(movie)});
+}
+
+// Show and hide functions
 
 function showCloseButton(closeSearchButtonElement){
     closeSearchButtonElement.classList.remove('closed')
@@ -63,17 +87,18 @@ function showCloseButton(closeSearchButtonElement){
 
 function hidCloseButton(closeSearchButtonElement) {
     searchInputElement.value = '';
-    getData();
     closeSearchButtonElement.classList.add('closed');
 }
 
 function showLoadMoreButton(loadMoreMoviesElement) {
-    closeSearchButtonElement.classList.remove('closed');
+    loadMoreMoviesElement.classList.remove('closed');
 }
 
 function hidLoadMoreButton(loadMoreMoviesElement) {
     loadMoreMoviesElement.classList.add('closed');
 }
+
+// Event listeners
 
 function addEventListeners(loadMoreMoviesElement, searchFormElement, closeSearchButtonElement) {
    
@@ -90,10 +115,12 @@ function addEventListeners(loadMoreMoviesElement, searchFormElement, closeSearch
     closeSearchButtonElement.addEventListener('click', (e)=> {
         e.preventDefault(),
         hidCloseButton(closeSearchButtonElement),
-        showLoadMoreButton(loadMoreMoviesElement)
+        showLoadMoreButton(loadMoreMoviesElement),
+        retrieveMovieRegistry()
     })
-    
 }
+
+// Startup functions
 
 window.onload = function () {
     getData();
