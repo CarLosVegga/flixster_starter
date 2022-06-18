@@ -42,7 +42,7 @@ Deployed Application (optional): [Flixster Deployed Site](https://carlosvegga.gi
 
 `TODO://` Add the embedded URL code to your animated app walkthrough below, `ADD_EMBEDDED_CODE_HERE`. Make sure the video or gif actually renders and animates when viewing this README. (🚫 Remove this paragraph after adding walkthrough video)
 
-`ADD_EMBEDDED_CODE_HERE`
+https://drive.google.com/file/d/1vKixtkoyE_8sVvrnF48NK-85kBs-FaVh/view?usp=sharing
 
 ### Reflection
 
@@ -55,6 +55,8 @@ Yes. I felt confident at using API to fetch data thanks to lab 3. I also learned
 I would have added a select to see movies according to the movie genre. I could have also prevented movies without posters to display on screen (or change the poster to a default value).
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
+
+Most of the demo went as planned. The things that went unplanned to the best of my knowledge I detected them and I was able to correct them. I would like to improve the design tho.
 
 ### Shout out
 
