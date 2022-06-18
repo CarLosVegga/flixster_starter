@@ -9,7 +9,7 @@
 </head>
 <body>
     
-    <div class="header">
+    <div id="header">
         <h1>Flixtster</h1>
         <form id='search-form' >
             <input id='search-input' type="text" placeholder="Find movies" required>
@@ -19,14 +19,19 @@
 
     </div>
 
-   <div id="movies-grid">
-        
-        
-   </div>
 
-   <div class="footer">
+    <div id="movie-info" class=''>
+        <button id="close-movie-btn" class="closed">x</button>
+    </div>
+
+
+    <div id="movies-grid">
+        
+    </div>
+
+    <div class="footer">
         <button id="load-more-movies-btn">Load more</button>
-   </div>
+    </div>
 
 
    <script src="script.js"></script>
