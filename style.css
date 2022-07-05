@@ -1,1 +1,158 @@
+html {
+    scroll-behavior: smooth;
+}
 
+body {
+    background-color: #0D3B66;
+}
+
+.closed {
+    display: none !important;
+    max-width: 0px;
+    max-height: 0px;
+}
+
+/* HEADER */
+
+#header {
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+input {
+    background-color: white;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    margin-top: 10px;
+    letter-spacing: 5px;
+}
+
+#header form {
+    display: flex;
+    justify-content: center;
+}
+
+#search-input {
+    height: 30px;
+    width: 300px;
+    border-radius: 5px;
+    border: none;
+    margin-left: 25px;
+    padding-left: 10px;
+    font-size: 14px;
+}
+
+#search {
+    color: white;
+    margin-left: 10px;
+    height: 33px;
+    width: 80px;
+    background-color: #188CF0;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#close-search-btn, #close-movie-btn {
+    color: white;
+    background: red;
+    border: none;
+    width: 25px;
+    height: 25px;
+    font-weight: normal;
+    font-size: large;
+    margin-left: 10px;
+    margin-top: 4px;
+}
+
+/* MOVIES */
+
+#movies-grid {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+
+
+@media screen and (max-width: 1200px){
+    #movies-grid{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (max-width: 800px){
+    #movies-grid{
+        grid-template-columns: 1fr;
+    }
+}
+
+.movie-title {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 150%;
+    display: block;
+}
+
+.movie-votes {
+    color:  #FFE8C2;
+    text-align: center;
+    font-weight: normal;
+    font-size: 120%;
+    display: block;
+}
+
+.movie-poster {
+    width: 100%;
+    height: auto;
+}
+
+.movie-card {
+    align-items: center;
+    transition: 0.5s;
+}
+
+.movie-card:hover {
+    transform: translateY(-25px);
+}
+
+/* MOVIE INFO */
+
+.takeScreen {
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    /* z-index: 1;  */
+    position: fixed; /* Stay in place */
+}
+
+#movie-info {
+    max-height: 0px;
+    max-width: 0px;
+}
+
+
+/* FOOTER */
+
+.footer {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+}
+
+#load-more-movies-btn {
+    color: white;
+    margin-left: 10px;
+    height: 40px;
+    width: 150px;
+    background-color: #188CF0;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    font-size: 14px;
+}
