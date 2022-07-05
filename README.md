@@ -35,7 +35,7 @@ Deployed Application (optional): [Flixster Deployed Site](https://carlosvegga.gi
 - [x] Deploy website using GitHub Pages. 
 - [ ] Allow user to view more details about a movie within a popup.
 - [x] Improve the user experience through CSS & animation.
-- [ ] Allow movie video trailers to be played using [embedded YouTube](https://support.google.com/youtube/answer/171780?hl=en)
+- [x] Allow movie video trailers to be played using [embedded YouTube](https://support.google.com/youtube/answer/171780?hl=en)
 - [ ] Implement anything else that you can get done to improve the app functionality!
 
 ### Walkthrough Video
